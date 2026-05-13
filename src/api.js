@@ -1,5 +1,8 @@
 const BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
+console.log(import.meta.env);
+console.log(BASE);
+
 export async function registerUser(name, email, password) {
   const res = await fetch(`${BASE}/api/auth/register`, {
     method: 'POST',
@@ -82,3 +85,4 @@ export async function deleteLog(token, tmdbId) {
   });
   return res.json();
 }
+
